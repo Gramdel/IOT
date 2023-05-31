@@ -1,0 +1,12 @@
+{
+  "name": "mongo-source",
+  "config": {
+    "connector.class": "com.mongodb.kafka.connect.MongoSourceConnector",
+    "connection.uri": "mongodb://source",
+    "database": "test",
+    "collection": "users",
+	"publish.full.document.only": true,
+	"output.format.value": "json",
+	"output.format.key": "json"
+  }
+}
