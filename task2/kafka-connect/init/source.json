@@ -1,0 +1,14 @@
+{
+  "name": "mongo-source",
+  "config": {
+    "connector.class": "com.mongodb.kafka.connect.MongoSourceConnector",
+    "connection.uri": "mongodb://source",
+    "database": "test",
+    "collection": "users",
+	"publish.full.document.only": true,
+	"key.converter": "org.apache.kafka.connect.json.JsonConverter",
+	"value.converter": "org.apache.kafka.connect.json.JsonConverter",
+	"output.format.value": "schema",
+	"output.schema.value": "{\"type\": \"record\", \"name\": \"User\", \"fields\": [{\"name\": \"_id\", \"type\": \"string\"}, {\"name\": \"firstname\", \"type\": \"string\"}, {\"name\": \"lastname\", \"type\": \"string\"}, {\"name\": \"age\", \"type\": \"long\"}, {\"name\": \"email\", \"type\": \"string\"}, {\"name\": \"sex\", \"type\": \"string\", \"default\": \"\"}]}"
+  }
+}
